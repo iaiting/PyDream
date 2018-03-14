@@ -1,0 +1,45 @@
+#container {
+        height: 900px;
+        background: blue;
+    }
+
+    #header {
+        height: 30px;
+        background: pink;
+    }
+
+    #main {
+        width: 1480px;
+        height: 830px;
+        background: red;
+        /*text-align: center;*/
+        margin: 0 auto;
+    }
+
+    #main-left {
+        width: 1080px;
+        height: 830px;
+        /*background: black;*/
+        float: left;
+    }
+
+    .worker {
+        /*width: 520px;*/
+        height: 200px;
+        background: black;
+        /*border: 10px solid red;*/
+        margin: 10px;
+        /*float: left;*/
+    }
+
+    #main-right {
+        width: 400px;
+        height: 830px;
+        background: orange;
+        float: left;
+    }
+
+    #footer {
+        height: 40px;
+        background: pink;
+    }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="https://static.baydn.com/static/scripts/jquery-1.7.2.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#btntest").click(function() {
+                console.info('**********');
+
+                fetch("http://127.0.0.1/account/api/accout/modify")
+                    .then(function(response) {
+                        console.info('**********1', response.json());
+                        return response.json();
+                    })
+                    .then(function(json) {
+                        // 此处的 json 已经被处理为 json 对象
+                    })
+                    .catch(function(err) {
+                        // 捕获错误
+                    });
+            });
+        });
+    </script>
+</head>
+
+
+<body>
+    <button type="button" name="button" id="btntest">按钮测试</button>
+    <p>If you click on me, I will disappear.</p>
+</body>
+
+</html>

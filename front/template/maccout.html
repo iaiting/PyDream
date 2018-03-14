@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>我的家，我做主！</title>
+    <link rel="stylesheet" href="../static/css/semantic.css" media="screen" title="no title">
+    <style media="screen">
+        .header {
+            height: 36px;
+            background-color: pink;
+        }
+
+        .main {
+            width: 1000px;
+            height: 800px;
+            background-color: gray;
+            margin: 0 auto;
+        }
+
+        .main .main-left {
+            width: 800px;
+            height: 800px;
+            background-color: gray;
+            float: left;
+        }
+
+        .main .main-right {
+            width: 200px;
+            height: 800px;
+            border-left: 5px solid blue;
+            background-color: brown;
+            float: left;
+        }
+
+        .footer {
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="https://static.baydn.com/static/scripts/jquery-1.7.2.min.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#btntest").click(function() {
+                console.log('This btntest...')
+                var url = "/v1/user";
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    async: false,
+                    data: {},
+                    dataType: "json",
+                });
+
+                //
+                // fetch(url)
+                //     .then(function(response) {
+                //         console.info('**********1', response.json());
+                //         return response.json();
+                //     })
+                //     .then(function(json) {
+                //         // 此处的 json 已经被处理为 json 对象
+                //     })
+                //     .catch(function(err) {
+                //         // 捕获错误
+                //     });
+
+
+            });
+        });
+    </script>
+
+</head>
+
+
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div class="ui right floated buttons">
+                <a href="index.html">
+                    <button class="ui button">注册</button>
+                </a>
+                <div class="or" data-text="||"></div>
+                <a href="index.html">
+                    <button class="ui  button">登录</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="main-left">
+            <div class="ui large form">
+                <div class="two fields">
+                    <div class="field">
+                        <label>手机号码</label>
+                        <input placeholder="手机号码" type="text">
+                    </div>
+                    <div class="field">
+                        <label>邮箱</label>
+                        <input placeholder="test@126.com" type="text">
+                    </div>
+                </div>
+
+                <div class="two fields">
+                    <div class="field">
+                        <label>工种</label>
+                        <input placeholder="水电工" type="text">
+                    </div>
+
+                    <div class="field">
+                        <label>生日</label>
+                        <input placeholder="1981年12月4日" type="text">
+                    </div>
+                </div>
+
+                <div class="two fields">
+                    <div class="field">
+                        <label>昵称</label>
+                        <input placeholder="老王" type="text">
+                    </div>
+
+                    <div class="field">
+                        <label>性别</label>
+                        <input placeholder="男" type="text">
+                    </div>
+
+                </div>
+
+                <div class="field">
+                    <label>作业地区</label>
+                    <input placeholder="安徽-马鞍山" type="text">
+                </div>
+
+
+                <div class="two fields">
+                    <div class="field">
+                        <label>淘宝账号</label>
+                        <input placeholder="unifortra@126.com" type="text">
+                    </div>
+                    <div class="field">
+                        <label>微信账号</label>
+                        <input placeholder="unifortra@126.com" type="text">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>报价说明</label>
+                    <textarea></textarea>
+                </div>
+
+                <div class="ui right floated submit button" id="btntest">确认</div>
+
+            </div>
+
+        </div>
+        <div class="main-right">
+            <ol>
+                <li>头像</li>
+                <li>修改个人资料</li>
+                <li>进行中业主</li>
+                <li>已完成业主</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        我是尾部
+    </div>
+
+</body>
+
+</html>
+
+</html>

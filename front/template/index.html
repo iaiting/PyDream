@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>我的家，我做主！</title>
+    <link rel="stylesheet" href="../static/css/semantic.css" media="screen" title="no title">
+    <style media="screen">
+        .header {
+            height: 36px;
+            background-color: pink;
+        }
+
+        .main {
+            width: 1000px;
+            height: 1800px;
+            background-color: blue;
+            margin: 0 auto;
+        }
+
+        .main .search {
+            width: 1000px;
+            height: 150px;
+            background-color: red;
+            margin: 0 auto;
+        }
+
+        .search #search1 {
+            width: 500px;
+            margin: auto;
+            height: 39px;
+            padding: 50px;
+            /*background-color: green;*/
+        }
+
+        .main .content .person {
+            width: 1000px;
+            height: 150px;
+            background-color: pink;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        .main .content .person .info {
+            width: 800px;
+            height: 150px;
+            background-color: orange;
+            float: left;
+        }
+
+        .main .content .person .content {
+            width: 200px;
+            height: 150px;
+            background-color: pink;
+            float: left;
+        }
+
+        .footer {
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div class="ui right floated buttons">
+                <a href="register.html">
+                    <button class="ui button">注册</button>
+                </a>
+                <div class="or" data-text="||"></div>
+
+                <a href="index.html">
+                    <button class="ui  button">登录</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="search">
+            <div id="search1">
+                <form class="ui form" action="index.html" method="post">
+                    <div class="two fields">
+                        <div class="field">
+                            <input name="search" placeholder="搜索相关内容" type="text">
+                        </div>
+                        <div class="field">
+                            <div class="ui submit button">Submit</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="person" id="person1">
+                <div class="info">
+                    <span>价格：水电 50元/平方 </span> <br>
+                    <span>工种：水电工 </span> <br>
+                    <span>年龄：42岁 </span> <br>
+                    <span>地点：安徽-马鞍山-雨山区</span> <br>
+                    <span>电话：13855555555 </span> <br>
+
+                </div>
+                <div class="contect">
+                    <span>姓名：王师傅 </span> <br>
+                    <span>工种：水电工 </span> <br>
+                    <span>年龄：42岁 </span> <br>
+                    <span>地点：安徽-马鞍山-雨山区</span> <br>
+                    <span>电话：13855555555 </span> <br>
+
+                </div>
+            </div>
+
+            <div class="person" id="person2">
+                <div class="info"></div>
+                <div class="contect"></div>
+            </div>
+
+            <div class="person" id="person3">
+                <div class="info"></div>
+                <div class="contect"></div>
+            </div>
+
+            我是显示内容
+        </div>
+    </div>
+
+    <div class="footer">
+        我是尾部
+    </div>
+
+</body>
+
+</html>

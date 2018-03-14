@@ -1,0 +1,2 @@
+all:
+	conda install tornado
