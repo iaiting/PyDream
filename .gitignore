@@ -1,13 +1,20 @@
+*.log
+
+emacs.exe.stackdump
+
+build/
+
+dist/
+
 # vs code 工程文件
 .vscode
 
 # PyCharm 工程文件
 .idea
 
-
-build/
-
-dist/
-
 # python 工程
 __pycache__/
+
+# golang 工程
+
+# c/c++ 工程
