@@ -4,4 +4,10 @@
 # PyCharm 工程文件
 .idea
 
+
+build/
+
+dist/
+
+# python 工程
 __pycache__/
