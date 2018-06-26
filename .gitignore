@@ -3,3 +3,5 @@
 
 # PyCharm 工程文件
 .idea
+
+__pycache__/
