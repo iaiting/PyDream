@@ -1,2 +1,19 @@
 # pydream
-python dream
+## 安装依赖包
+
+### Windows
+```
+win + r
+chcp 65001
+pip install -r requirements.txt
+```
+
+### Linux
+```
+```
+## 生成工程的依赖包
+#+BEGIN_EXAMPLE
+pip freeze > requirements.txt
+#+END_EXAMPLE
+
+

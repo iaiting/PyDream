@@ -9,9 +9,11 @@ import signal
 class CurdHandler(tornado.web.RequestHandler):
     def get(self):
         self.write("This is CurdHandler's GetHandler")
+        print("******* get method\n")
 
     def post(self):
         self.write("This is CurdHandler's PostHandler")
+        print("******* post method\n")
 
     def put(self):
         self.write("This is CurdHandler's PutHandler")

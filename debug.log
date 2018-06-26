@@ -1,0 +1,29 @@
+[8772:8720:0322/235844.319:VERBOSE1:crash_service_main.cc(78)] Session start. cmdline is [--reporter-url=https://crashreporter.atom.io --application-name=Atom "--crashes-directory=C:\Users\lescpsn\AppData\Local\Temp\Atom Crashes" --v=1]
+[8772:8720:0322/235844.319:VERBOSE1:crash_service.cc(142)] window handle is 00000000000104E0
+[8772:8720:0322/235844.319:VERBOSE1:crash_service.cc(284)] pipe name is \\.\pipe\Atom Crash Service
+dumps at C:\Users\lescpsn\AppData\Local\Temp\Atom Crashes
+[8772:8720:0322/235844.319:VERBOSE1:crash_service.cc(288)] checkpoint is C:\Users\lescpsn\AppData\Local\Temp\Atom Crashes\crash_checkpoint.txt
+server is https://crashreporter.atom.io
+maximum 128 reports/day
+reporter is electron-crash-service
+[8772:8720:0322/235844.319:VERBOSE1:crash_service_main.cc(94)] Ready to process crash requests
+[8772:8236:0322/235844.319:VERBOSE1:crash_service.cc(317)] client start. pid = 7900
+[8772:8236:0322/235845.638:VERBOSE1:crash_service.cc(317)] client start. pid = 4884
+[3216:9924:0322/235845.655:VERBOSE1:crash_service_main.cc(78)] Session start. cmdline is [--reporter-url=https://crashreporter.atom.io --application-name=Atom "--crashes-directory=C:\Users\lescpsn\AppData\Local\Temp\Atom Crashes" --v=1]
+[3216:9924:0322/235845.657:VERBOSE1:crash_service.cc(142)] window handle is 000000000003050C
+[3216:9924:0322/235845.657:VERBOSE1:crash_service.cc(284)] pipe name is \\.\pipe\Atom Crash Service
+dumps at C:\Users\lescpsn\AppData\Local\Temp\Atom Crashes
+[3216:9924:0322/235845.657:VERBOSE1:crash_service.cc(288)] checkpoint is C:\Users\lescpsn\AppData\Local\Temp\Atom Crashes\crash_checkpoint.txt
+server is https://crashreporter.atom.io
+maximum 128 reports/day
+reporter is electron-crash-service
+[3216:9924:0322/235845.657:ERROR:crash_service.cc(295)] could not start dumper
+[8772:3828:0323/004450.258:VERBOSE1:crash_service.cc(325)] client end. pid = 7900
+[8772:3828:0323/004450.307:VERBOSE1:crash_service.cc(325)] client end. pid = 4884
+[8772:3828:0323/004451.307:VERBOSE1:crash_service.cc(346)] zero clients. exiting
+[8772:8720:0323/004451.307:VERBOSE1:crash_service.cc(486)] session ending..
+[8772:8720:0323/004451.307:VERBOSE1:crash_service.cc(491)] clients connected :2
+clients terminated :2
+dumps serviced :0
+dumps reported :0
+[8772:8720:0323/004451.307:VERBOSE1:crash_service_main.cc(99)] Session end. return code is 0

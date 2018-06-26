@@ -1,0 +1,41 @@
+missing module named 'multiprocessing.forking' - imported by c:\local\anaconda3\envs\py364env-x86\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_multiprocessing.py
+missing module named multiprocessing.get_context - imported by multiprocessing, multiprocessing.pool, multiprocessing.managers, multiprocessing.sharedctypes
+missing module named multiprocessing.TimeoutError - imported by multiprocessing, multiprocessing.pool
+missing module named multiprocessing.BufferTooShort - imported by multiprocessing, multiprocessing.connection
+missing module named multiprocessing.AuthenticationError - imported by multiprocessing, multiprocessing.connection
+missing module named multiprocessing.set_start_method - imported by multiprocessing, multiprocessing.spawn
+missing module named multiprocessing.get_start_method - imported by multiprocessing, multiprocessing.spawn
+missing module named multiprocessing.SimpleQueue - imported by multiprocessing, concurrent.futures.process
+missing module named resource - imported by posix, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+missing module named posix - imported by os, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+missing module named _posixsubprocess - imported by subprocess, multiprocessing.util, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+missing module named org - imported by pickle, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+missing module named readline - imported by cmd, code, pdb, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+missing module named _winreg - imported by platform, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+missing module named _scproxy - imported by urllib.request
+missing module named java - imported by platform, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+missing module named 'java.lang' - imported by platform, C:\Projects\iaiting\PyDream\xtornado\xtornado.py, xml.sax._exceptions
+missing module named vms_lib - imported by platform, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+missing module named termios - imported by tty, C:\Projects\iaiting\PyDream\xtornado\xtornado.py, getpass
+missing module named urllib.urlencode - imported by urllib, tornado.httputil, tornado.web
+missing module named grp - imported by shutil, tarfile, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, C:\Projects\iaiting\PyDream\xtornado\xtornado.py, netrc, getpass
+missing module named _dummy_threading - imported by dummy_threading, C:\Projects\iaiting\PyDream\xtornado\xtornado.py
+missing module named 'org.python' - imported by copy, C:\Projects\iaiting\PyDream\xtornado\xtornado.py, xml.sax
+missing module named monotonic - imported by tornado.platform.auto
+missing module named monotime - imported by tornado.platform.auto
+missing module named fcntl - imported by asyncio.unix_events, tornado.platform.posix
+missing module named asyncio.DefaultEventLoopPolicy - imported by asyncio, asyncio.events
+missing module named thread - imported by tornado.ioloop
+missing module named urlparse - imported by tornado.escape, tornado.httputil, tornado.web
+missing module named Cookie - imported by tornado.httputil, tornado.web
+missing module named cStringIO - imported by tornado.template
+missing module named copy_reg - imported by cStringIO
+missing module named _curses - imported by curses, curses.has_key
+missing module named httplib - imported by tornado.httputil
+missing module named __builtin__ - imported by tornado.gen
+missing module named backports_abc - imported by tornado.gen
+missing module named singledispatch - imported by tornado.gen
+missing module named htmlentitydefs - imported by tornado.escape
