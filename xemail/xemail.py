@@ -19,82 +19,169 @@ from email.utils import parseaddr
 import poplib
 import base64
 
+import email
 #.decodebytes(s.encode(encoding=charset)), encoding=charset)
-
 
 ################################################################################
 
 # 阿里云个人邮箱服务器
 ################################################################################
-smtp_host =  'smtp.aliyun.com'
+#sender = 'unifortran@aliyun.com'
 
-sender = 'unifortran@aliyun.com'
+#mailpass = 'g00gle2o1o'
 
-mailpass = 'g00gle2o1o'
 
+UserInfo={
+    'email' : 'unifortran@aliyun.com',
+    'emailpassword' : 'g00gle2o1o'
+}
+
+################################################################################
+def get_smtphost(email):
+
+    try:
+
+        smtp_host='smtp.'+email.split('@')[-1]
+
+        return smtp_host
+
+    except:
+
+        return ''
 
 
 ################################################################################
-class CMail(object):
-    def __init__(self):
-        pass
+def get_pop3host(email):
 
-    def auth(self, debug=0):
-        from smtplib import SMTP_SSL
-        smtp = SMTP_SSL()
-        try:
-            smtp.set_debuglevel(debug)
-            smtp.connect(self.smtp_server, self.smtp_port)
+    try:
+        pop3_host = 'pop3.%s' % (email.split('@')[-1])
 
-        except ssl.SSLError:
-            from smtplib import SMTP
-            smtp = SMTP()
-            smtp.set_debuglevel(debug)
-            smtp.connect(self.smtp_server, self.smtp_port)
+        return pop3_host
 
-        smtp.login(self.smtp_auth_user, self.smtp_auth_password)
+    except:
 
-        return smtp
-
-
-    def send(self):
-        pass
+        return ''
 
 
 ################################################################################
-def f_send_mail():
-    msg = email.mime.multipart.MIMEMultipart()
-    msgFrom = sender
-    msgTo = '790720555@qq.com'
-    smtpSever = smtp_host
+class CEmail(object):
 
-    msg['from'] = sender
-    msg['to'] = msgTo
-    msg['subject'] = '我爱中华666'
-    content = '''
-    你好:
-        我爱中华666
-    '''
+    def __init__(self, str_email, str_password):
 
-    txt = email.mime.text.MIMEText(content)
-    msg.attach(txt)
+        self.m_email = str_email
 
-    smtp = smtplib.SMTP()
+        self.m_password = str_password
 
-#    smtp.set_debuglevel(1)
+        self.m_smtphost = get_smtphost(str_email)
 
-    smtp.connect(smtp_host)
-    smtp.login(msgFrom, mailpass)
+        self.m_pop3host = get_pop3host(str_email)
 
-    smtp.sendmail(msg['from'], msg['to'], msg.as_string())
+        self.m_smtp = smtplib.SMTP()
 
-    print(msg)
-    print('************************************************t101:\n')
-    print(msg.as_string())
-    smtp.quit()
+        self.m_sslsmtp = smtplib.SMTP_SSL()
+
+        self.m_pop3 = poplib.POP3(self.m_pop3host)
+
+        
+
+    def PrintEmailDetailInfo(self):
+
+        print('email address = ', self.m_email)
+
+        print('email password = ', self.m_password)
+
+        print('email smtphost = ', self.m_smtphost)
 
 
+    def auth(self, debug = 0):
+        # smtp auth
+        self.m_smtp.set_debuglevel(debug)
 
+        self.m_smtp.connect(self.m_smtphost)
+
+        self.m_smtp.login(self.m_email, self.m_password)
+
+        # pop3 auth
+        self.m_pop3.set_debuglevel(debug)
+
+        self.m_pop3.user(self.m_email)
+
+        self.m_pop3.pass_(self.m_password)
+
+
+    def send(self, to_email, subject, content):
+
+        msg = email.mime.multipart.MIMEMultipart()
+
+        msg['from'] = self.m_email
+
+        msg['to'] = to_email
+
+        msg['subject'] = subject
+
+        msg.attach(email.mime.text.MIMEText(content))
+
+        self.m_smtp.sendmail(msg['from'], msg['to'], msg.as_string())
+
+
+        print(msg)
+        print('************************************************t101:\n')
+        #self.m_smtp.quit()
+
+
+
+    def recevive(self):
+        resp, mails,octets = self.m_pop3.list()
+
+        mail_nums = len(mails)
+
+        response_status, mail_message_lines, octets = self.m_pop3.retr(mail_nums)
+
+
+        print("====================== 第",mail_nums)
+
+        msg_content = b'\r\n'.join(mail_message_lines).decode('gbk')
+        # 邮件原始数据没法正常浏览，因此需要相应的进行解码操作
+        msg = Parser().parsestr(text=msg_content)
+
+
+
+
+        subject = msg.get('subject')
+
+        print('Subject: ', subject)
+        h = email.header.Header(subject)
+
+        
+        print('h = ', h)
+
+        dh = email.header.decode_header(h)
+        print('dh = ', dh)
+
+
+
+        subject =dh[0][0].decode(dh[0][1]).encode('utf8')
+        
+
+        #subject = unicode(dh[0][0], dh[0][1]).encode('utf8')
+
+        #subject = h.encode('utf8')
+
+
+        print('Subject: ', subject)
+#        print('Subject: ', s)
+        
+
+        
+
+        
+
+
+        #print('解码后的邮件信息:\n{}'.format(msg))
+        #print_info(msg)
+
+
+################################################################################
 # 邮件的Subject或者Email中包含的名字都是经过编码后的str，要正常显示，就必须decode
 def decode_str(s):
     value, charset = decode_header(s)[0]
@@ -154,20 +241,8 @@ def f_receive_mail():
 
     print(decode_base64('ufnosQ==','gb18030'))
 
-    #smtp_host =  'smtp.aliyun.com'
-    pop3_host =  'pop3.aliyun.com'
-    #sender = 'unifortran@aliyun.com'
-
-    #mailpass = 'g00gle2o1o'
-
     #server = poplib.POP3_SSL(pop3_host)
-    server = poplib.POP3(pop3_host)
-
     #print(server.getwelcome().decode("utf-8"))
-
-#    server.set_debuglevel(1)
-    server.user(sender)
-    server.pass_(mailpass)
 
     #ret = server.stat()
     #print(ret)
@@ -185,6 +260,7 @@ def f_receive_mail():
 
     msg_content = b"\r\n".join(lines).decode("utf-8")
     msg = Parser().parsestr(msg_content)
+
     #print_info(msg)
     #print(msg)
 
@@ -204,9 +280,58 @@ def f_receive_mail():
 
     server.close()
 
+
+
+################################################################################
+def TEST_get_smtphost():
+    print('\n==== Enter get_smtphost test:')
+
+    email_address = 'abb@aliyun.com'
+    smtphost = get_smtphost(email_address)
+
+    print("email address = ", email_address)
+    print("smtp host = ", smtphost)
+
+
+def TEST_get_pop3host(email):
+    print('\n==== Enter get_pop3host test:')
+
+    email_address = 'abb@aliyun.com'
+    pop3host = get_pop3host(email_address)
+
+    print("email address = ", email_address)
+    print("pop3host host = ", pop3host)
+
+
+def TEST_CEmail():
+    print('\n==== Enter CEmail test:')
+    myemail = CEmail('unifortran@aliyun.com', 'g00gle2o1o')
+
+    myemail.PrintEmailDetailInfo()
+
+    myemail.auth(1)
+
+    #myemail.send('790720555@qq.com', '我爱中华1111112', '11111112')
+
+    #myemail.send('790720555@qq.com', '我爱中华2222221', '22222221')
+
+    myemail.recevive()
+
+
+
+
+
+
 def main():
+    TEST_get_pop3host(email)
+
+    TEST_get_smtphost()
+
+    TEST_CEmail()
+    return 
+    #print('============= main:\n')
     #f_send_mail()
-    f_receive_mail()
+    #f_receive_mail()
 
 ################################################################################
 if __name__ == "__main__":
