@@ -1,0 +1,3 @@
+
+class XsmtpAddressError(Exception):
+    pass
