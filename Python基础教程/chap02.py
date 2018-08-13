@@ -99,12 +99,16 @@ def chap02_03(sentence=None):
 
 ################################################################################
 def chap02_04(username=None, pin=None):
+    '''
+    序列成员资格示例
+    检查用户名和PIN码
+    '''
 
     database = [['albert', '1234'], ['dilbert', '4242'], ['smith', '7524'], ['jones', '9843']]
     username = username or input('Input User Name: ')
     pin = pin or input('Input Pin Code: ')
     if [username, pin] in database:
-        fprint("chap02_04 : [{0}, {1}] Access Granted!\n".format(username, pin))
+        print("chap02_04 : [{0}, {1}] Access Granted!\n".format(username, pin))
     else:
         print("chap02_04 : [{0}, {1}] Can't Access Granted!\n".format(username, pin))
 
@@ -121,8 +125,6 @@ def main_chap02():
     chap02_03("I Love China")
 
     chap02_04('albert', '1234')
-
-    # chap02_04()
 
 ################################################################################
 if __name__ == '__main__':
