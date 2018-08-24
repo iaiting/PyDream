@@ -16,7 +16,7 @@ def main():
     print("88888888888888888")
     print("88888888888888888")
     print("88888888888888888")
-    
+
     print("Enter Function:", sys._getframe().f_code.co_name)
 
 

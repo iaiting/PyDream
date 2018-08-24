@@ -11,7 +11,8 @@
 #
 # Copyright     : 本文件隶属于iaiting，欢迎转载无须知会
 #
-# Desciption    : Python基础教程（第2版）第二章书本例题
+# Desciption    : Python基础教程（第2版
+#                 - 第 2 章 列表和元组
 #
 ################################################################################
 def chap02_01(year=None, month_num=None, day_num=None):
